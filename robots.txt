@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# The account-deletion dashboard is intentionally not part of the public site.
+Disallow: /account/

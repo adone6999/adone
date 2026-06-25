@@ -1,0 +1,116 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us — AdOne</title>
+<meta name="description" content="Get in touch with AdOne — support, privacy, legal, IP and abuse contacts, plus our grievance officer.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="siteHeader"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="crumb"><a href="index.html">Home</a> &rsaquo; Contact</p>
+      <h1>Contact us</h1>
+      <p class="updated">We're happy to help owners, advertisers and partners. Pick the channel that fits.</p>
+    </div>
+  </section>
+
+  <section class="article">
+    <div class="container">
+      <div class="prose">
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>General &amp; sales</h3>
+            <p>Questions about listing inventory or running a campaign.</p>
+            <p><a data-config="supportEmail"></a></p>
+          </div>
+          <div class="card">
+            <h3>Privacy &amp; data requests</h3>
+            <p>Access, correction, deletion and other data-rights requests.</p>
+            <p><a data-config="privacyEmail"></a></p>
+          </div>
+          <div class="card">
+            <h3>Legal &amp; compliance</h3>
+            <p>Terms, contracts and regulatory matters.</p>
+            <p><a data-config="legalEmail"></a></p>
+          </div>
+          <div class="card">
+            <h3>Trust &amp; safety / abuse</h3>
+            <p>Report abuse, spam or policy violations.</p>
+            <p><a data-config="abuseEmail"></a></p>
+          </div>
+          <div class="card">
+            <h3>Intellectual property</h3>
+            <p>Copyright, trademark and IPR complaints.</p>
+            <p><a data-config="iprEmail"></a></p>
+          </div>
+          <div class="card">
+            <h3>Grievance officer (India)</h3>
+            <p>As required under Indian law for grievance redressal.</p>
+            <p><span data-config="grievanceOfficer"></span> — <a data-config="grievanceEmail"></a></p>
+          </div>
+        </div>
+
+        <h2 id="message">Send us a message</h2>
+        <p>Fill this in and your email app will open with the details ready to send to our team.</p>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input class="input" id="cf-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Your email</label>
+            <input class="input" id="cf-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="cf-topic">Topic</label>
+            <select class="input" id="cf-topic" name="topic">
+              <option>General &amp; sales</option>
+              <option>Listing my ad space</option>
+              <option>Running a campaign</option>
+              <option>Privacy &amp; data</option>
+              <option>Report abuse</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea class="textarea" id="cf-msg" name="message" required></textarea>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">Open email to send</button>
+          <p class="hint">No data is sent to AdOne from this page — it simply composes an email in your own mail app.</p>
+        </form>
+
+        <div class="callout mt-3">
+          <p><strong>Mailing address.</strong> <span data-config="legalEntity"></span>, <span data-config="addressLine"></span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  (function () {
+    var f = document.getElementById("contactForm");
+    if (!f) return;
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var cfg = window.ADONE_CONFIG || {};
+      var to = cfg.supportEmail || "adone.queries@gmail.com";
+      var name = document.getElementById("cf-name").value.trim();
+      var email = document.getElementById("cf-email").value.trim();
+      var topic = document.getElementById("cf-topic").value;
+      var msg = document.getElementById("cf-msg").value.trim();
+      if (!name || !email || !msg) { alert("Please fill in your name, email and a message."); return; }
+      var subject = "[AdOne] " + topic + " — " + name;
+      var body = "Name: " + name + "\nEmail: " + email + "\nTopic: " + topic + "\n\n" + msg;
+      window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  })();
+</script>

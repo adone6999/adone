@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AdOne logo">
+  <defs>
+    <linearGradient id="adoneMark" x1="8" y1="42" x2="40" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D5C30"/>
+      <stop offset="0.55" stop-color="#1B8A4A"/>
+      <stop offset="1" stop-color="#A3E635"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#adoneMark)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M8.5 41 L24 7.5 L39.5 41"/>
+    <path d="M16 28.5 H32"/>
+  </g>
+</svg>
