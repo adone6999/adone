@@ -26,6 +26,6 @@ window.ADONE_CONFIG = {
      Local dev examples are below; swap for your Render URLs in production, e.g.
        fieldersApiBase: "https://adone-fielders-api.onrender.com/api/v1",
        centerApiBase:   "https://adone-center-api.onrender.com/api/v1",          */
-  fieldersApiBase: "http://localhost:8101/api/v1",
-  centerApiBase: "http://localhost:8102/api/v1",
+  fieldersApiBase: "http://adoneduck.duckdns.org:8101/api/v1",
+  centerApiBase: "http://adoneduck.duckdns.org:8102/api/v1",
 };
